@@ -1,0 +1,55 @@
+#ex1
+
+def cubed(N):
+    for i in range(1, N + 1):
+        yield i**3
+
+for n in cubed(5):
+    print(n) 
+
+#ex 2
+import random
+
+def randoms(N):
+    for _ in range(N):
+        yield random.randint(1, N)
+
+for n in randoms(5):
+    print(n)
+
+
+
+def primes(N):
+    if N < 2:
+        return False
+    for i in range(2, int(N**0.5) + 1):
+        if N % i == 0:
+            return False
+    return True
+
+
+def generate_primes(start, end):
+    for number in range(max(2, start), end + 1):
+        if primes(number):
+            yield number
+
+for i in generate_primes(2, 9):
+    print(i)
+    
+
+
+def generate_fibonacci(n):
+    a, b = 0, 1
+    count = 0
+
+    while count < n:
+        yield a
+        a, b = b, a + b
+        count += 1
+
+# Example usage
+num_terms = 5
+
+print(f"Fibonacci sequence with {num_terms} terms:")
+for term in generate_fibonacci(num_terms):
+    print(term)
