@@ -120,4 +120,103 @@ l_date = date(2014, 7, 11)
 
 delta = l_date - f_date
 print(delta.days)
+
+
+#ex 15
+import math
+radius = 6
+volume = (4/3) * math.pi * radius**3
+print(volume)
+
+#ex 16
+s_number = 17
+g_numder = 5
+
+if g_numder > s_number:
+    diff = 2 * abs(s_number - g_numder)
+else:
+    diff = s_number - g_numder
+
+print(diff)
+
+#ex 17
+x = 100
+if 100 >= abs(x -1000) or 100 >= abs(x - 2000):
+    print("yes")
+else:
+    print("no")
+
+#ex 19
+str = "it snow?"
+
+if str.startswith("Is"):
+    print(str)
+else:
+    new_string = "Is" +" " + str
+    print(new_string)
+
+#ex 20
+n = 3    
+print(n * str)
+
+#ex 21
+
+def even_odd(num):
+    if num % 2 == 0:
+        print(f"{num} is even")
+    else:
+        print(f"{num} is odd")
+
+number = int(input("Enter a number:"))
+even_odd(number)
+
+#ex 22
+
+count = 0
+list = [4,4,5,6,4,5,4,4]
+str = "".join(map(str, list))
+
+for i in str:
+    if i == "4" in str:
+        count += 1
+    else:
+        continue
+print(count)
+
+ 
+#ex 23
+
+
+def copy(n,str):
+    if n >= 0 and len(str) < 2:
+        make_copy = str * n
+        print(make_copy)
+    else:
+        make_copy = str[:2] * n
+        print(make_copy)
+ 
+
+word = "Hellp"
+copy(4, word)
+       
+#ex 24
+ 
+vowel_letters = ["a","e",'i','0','u']
+letter = input("Enter a letter:")
+if letter in vowel_letters:
+    print(f"{letter} is a vowel")
+        
+else:
+    print(f"{letter} is not  a vowel")
+        
 '''
+#ex 25
+    
+def check(group, value):
+    for i in group:
+        if value == i:
+            return True
+    return False
+            
+
+print(check([1, 5, 8, 3], 5))
